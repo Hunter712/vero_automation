@@ -32,3 +32,35 @@ def tabs_with_elements_inside():
     return [('filter-photo', 'post-t-88mzp2ShDzvmpSmgDvdL54'),
             ('filter-video', 'post-M3nF-2f4MBScbGs1XsfCV7fk'),
             ('filter-music', 'post-78-jKzDCNRPT31nj635jkW54')]
+
+
+@pytest.fixture()
+def movie_tab_and_post():
+    return ('filter-movie',
+            'post-7H-XDstff6xbwQ4dfPWRMRG9')
+
+@pytest.fixture()
+def photo_tab_and_post():
+    return ('filter-photo',
+            'post-rZ-LZCQVsZjgq1r3N2CkS59f')
+
+@pytest.fixture()
+def comments_button():
+    return ('//div[@class="comments"]',
+            "//div[@class='comment-content']/p/span[text() = '5']")
+
+
+@pytest.fixture()
+def arrows_on_post_midview():
+    return ('//*[@id="rZ-LZCQVsZjgq1r3N2CkS59f"]/div[1]/div[1]/button[1]',
+            '//*[@id="rZ-LZCQVsZjgq1r3N2CkS59f"]/div[1]/div[1]/button[2]')
+
+
+@pytest.fixture()
+def three_dots():
+    return '//div[@class="options options-desktop"]'
+
+
+@pytest.fixture()
+def copy_link():
+    return '//div[@class="modal-container options-menu"]/ul/li[4]'

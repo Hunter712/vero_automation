@@ -7,6 +7,7 @@ def parser_obj():
     parser.read(os.path.join(get_project_dir(), 'config.ini'))
     return parser
 
+
 def get_project_dir():
     return os.path.split(os.path.split(os.path.split(__file__)[0])[0])[0]
 
