@@ -55,9 +55,9 @@ def test_comments_for_post(driver, movie_tab_and_post, three_dots, copy_link, ar
 
     post_midview = PostMidviewPage(driver, movie_tab_and_post, arrows_on_post_midview, comments_button)
     post_midview.click_certain_post()
-    # time.sleep(1)
+    #time.sleep(1)
     is_element_on_page = post_midview.click_comments_button()
-    # time.sleep(1)
+    #time.sleep(1)
     assert is_element_on_page.is_element_displayed()
 
 
@@ -70,8 +70,8 @@ def test_copied_profile_link(driver, movie_tab_and_post, three_dots, copy_link):
     """
     profile_page = ProfilePage(driver, movie_tab_and_post, three_dots, copy_link)
     profile_page.navigate_to_profile_page()
-    # time.sleep(1)
+    #time.sleep(1)
     profile_page.copy_link_button()
-    # time.sleep(1)
+    #time.sleep(1)
     is_right_link_copied = pyperclip.paste()
     assert is_right_link_copied == "https://vero.co/vladyslav_fedorchenko"

@@ -18,3 +18,7 @@ def get_base_url():
 
 def get_browser_name():
     return parser_obj().get('test_info', 'browser')
+
+
+def get_locator(locator):
+    return parser_obj().get('locators', locator)

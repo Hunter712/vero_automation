@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
-from web_tests.helpers.project_helper import get_browser_name
+from web_tests.helpers.project_helper import *
 
 
 @pytest.fixture()
@@ -29,38 +29,38 @@ def driver():
 
 @pytest.fixture()
 def tabs_with_elements_inside():
-    return [('filter-photo', 'post-t-88mzp2ShDzvmpSmgDvdL54'),
-            ('filter-video', 'post-M3nF-2f4MBScbGs1XsfCV7fk'),
-            ('filter-music', 'post-78-jKzDCNRPT31nj635jkW54')]
+    return [(get_locator('photo'), get_locator('local_photo_in_photo_tab')),
+            (get_locator('video'), get_locator('local_video_in_video_tab')),
+            (get_locator('music'), get_locator('local_music_in_music_tab'))]
 
 
 @pytest.fixture()
 def movie_tab_and_post():
-    return ('filter-movie',
-            'post-7H-XDstff6xbwQ4dfPWRMRG9')
+    return (get_locator('movie'),
+            get_locator('local_movie_in_movie_tab'))
 
 @pytest.fixture()
 def photo_tab_and_post():
-    return ('filter-photo',
-            'post-rZ-LZCQVsZjgq1r3N2CkS59f')
+    return (get_locator('photo'),
+            get_locator('local_photo_in_photo_tab'))
 
 @pytest.fixture()
 def comments_button():
-    return ('//div[@class="comments"]',
-            "//div[@class='comment-content']/p/span[text() = '5']")
+    return (get_locator('comment_button'),
+            get_locator('local_comment'))
 
 
 @pytest.fixture()
 def arrows_on_post_midview():
-    return ('//*[@id="rZ-LZCQVsZjgq1r3N2CkS59f"]/div[1]/div[1]/button[1]',
-            '//*[@id="rZ-LZCQVsZjgq1r3N2CkS59f"]/div[1]/div[1]/button[2]')
+    return (get_locator('left_arrow_button'),
+            get_locator('right_arrow_button'))
 
 
 @pytest.fixture()
 def three_dots():
-    return '//div[@class="options options-desktop"]'
+    return get_locator('three_dots_button')
 
 
 @pytest.fixture()
 def copy_link():
-    return '//div[@class="modal-container options-menu"]/ul/li[4]'
+    return get_locator('copy_link_button')
