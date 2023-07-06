@@ -12,10 +12,7 @@ class IsElementOnPage(BasePage):
 
     @property
     def element_container(self):
-        if self.locator_type == "id":
-            return self.element((By.ID, self.locator))
-        elif self.locator_type == "xpath":
-            return self.element((By.XPATH, self.locator))
+        return self.element((self.locator_type, self.locator))
 
     def is_element_displayed(self):
         return self.element_container.is_displayed()
